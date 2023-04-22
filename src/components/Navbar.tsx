@@ -9,9 +9,7 @@ type Link = {
   event?: () => void
 }
 
-function Links (
-  { links } : { links: Link[] }
-) : JSX.Element {
+function Links ({ links } : { links: Link[] }) : JSX.Element {
   return (
     <>
       {
@@ -57,7 +55,7 @@ const Navbar = () => {
 
   return (
     <header>
-      <nav className="bg-white border-gray-200 container mx-auto py-2.5 dark:bg-gray-800 px-4 md:px-0">
+      <nav className="bg-white border-gray-200 py-2.5 dark:bg-gray-800 pl-8 pr-16">
           <div className="flex flex-wrap justify-between items-center">
               { /* Logo */ }
               <div className="flex justify-start items-center">
@@ -70,7 +68,7 @@ const Navbar = () => {
               <div className="flex items-center lg:order-2">
                   <Links links={links}/>
                   { /* User menu */ }
-                  <div className={`${isOpen ? 'absolute' : 'hidden'} top-0 right-0 mt-16 z-50 my-4 w-56 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600`} id="dropdown">
+                  <div className={`${!isOpen ? 'absolute' : 'hidden'} top-14 right-16 mr-2 z-50 my-4 w-56 text-base list-none bg-white rounded divide-y divide-gray-100 shadow dark:bg-gray-700 dark:divide-gray-600`} id="dropdown">
                       <div className="py-3 px-4">
                           <span className="block text-sm font-semibold text-gray-900 dark:text-white">Neil sims</span>
                           <span className="block text-sm font-light text-gray-500 truncate dark:text-gray-400">name@flowbite.com</span>
